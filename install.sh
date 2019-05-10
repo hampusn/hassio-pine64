@@ -17,8 +17,8 @@ sudo apt-get install apt-transport-https ca-certificates gnupg-agent software-pr
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
 ## Add docker stable repository 
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-## sudo add-apt-repository "deb [arch=arm64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+## sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+sudo add-apt-repository "deb [arch=arm64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 
 ## Install dependencies for home assistant
 sudo apt-get install docker-ce jq avahi-daemon dbus apparmor-utils network-manager -y
@@ -27,8 +27,8 @@ sudo apt-get install docker-ce jq avahi-daemon dbus apparmor-utils network-manag
 sudo systemctl enable NetworkManager.service
 
 ## Install Home Assistant
-curl -sL https://raw.githubusercontent.com/home-assistant/hassio-installer/master/hassio_install.sh | sudo bash -s
-## curl -sL https://raw.githubusercontent.com/home-assistant/hassio-installer/master/hassio_install.sh | bash -s -- -m qemuarm-64
+## curl -sL https://raw.githubusercontent.com/home-assistant/hassio-installer/master/hassio_install.sh | sudo bash -s
+curl -sL https://raw.githubusercontent.com/home-assistant/hassio-installer/master/hassio_install.sh | bash -s -- -m qemuarm-64
 
 ## Restore Home Assistant snapshot
 ## TODO: 
