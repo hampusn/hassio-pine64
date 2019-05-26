@@ -1,0 +1,30 @@
+# Weather prediction
+- platform: yr
+
+# Shopping list from Todoist
+- platform: rest
+  name: todoist
+  resource: !secret todoist_resource
+  value_template: "{{ value_json|map(attribute='content')|list|tojson }}"
+  headers:
+    Authorization: !secret todoist_token
+    Accept-Charset: utf-8
+    Content-Type: application/json; charset=utf-8
+
+# Runner stats from ITRA
+- platform: command_line
+  name: itra_runner_stats
+  command: !secret itra_runner_stats_command
+  value_template: 'OK'
+  json_attributes:
+    - generalScore
+    - topRaces
+
+# Latest episodes and movies in Kodi
+- platform: command_line
+  name: kodi
+  command: !secret kodi_command
+  value_template: 'OK'
+  json_attributes:
+    - movies
+    - episodes

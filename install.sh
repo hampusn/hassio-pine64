@@ -37,12 +37,20 @@ echo -e "\nDefaults    env_keep+=SSH_AUTH_SOCK\n" | sudo tee -a /etc/sudoers
 
 ## Download custom cards
 ln -s /usr/share/hassio/homeassistant ~/homeassistant
+
+cd ~/homeassistant
+sudo curl -O https://raw.githubusercontent.com/hampusn/hassio-pine64/master/config/sensor.yaml
+sudo curl -O https://raw.githubusercontent.com/hampusn/hassio-pine64/master/config/ui-lovelace.yaml
+
 sudo mkdir ~/homeassistant/www
 cd ~/homeassistant/www
 sudo git clone git@github.com:thomasloven/lovelace-card-tools.git
 sudo git clone git@github.com:thomasloven/lovelace-layout-card.git
 sudo git clone git@github.com:maykar/compact-custom-header.git
+sudo git clone git@github.com:hampusn/lovelace-list-card.git
+sudo git clone git@github.com:hampusn/lovelace-attribute-card.git
 
 sudo mkdir ~/homeassistant/commands
 cd ~/homeassistant/commands
-sudo curl -O https://raw.githubusercontent.com/hampusn/hassio-pine64/master/commands/kodi-recently-added.py
+sudo curl -O https://raw.githubusercontent.com/hampusn/hassio-pine64/master/config/commands/kodi-recently-added.py
+

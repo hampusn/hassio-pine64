@@ -4,6 +4,10 @@ resources:
     type: js
   - url: /local/lovelace-layout-card/layout-card.js?v=1
     type: js
+  - url: /local/lovelace-list-card/list-card.js?v=1
+    type: js
+  - url: /local/lovelace-attribute-card/attribute-card.js?v=1
+    type: js
   - url: /local/compact-custom-header/compact-custom-header.js?v=1
     type: module
 views:
@@ -30,6 +34,10 @@ views:
                 icon: mdi:lightbulb
               - light.pendant_lamp
           
+          - type: "custom:list-card"
+            sensor: sensor.todoist
+            title: Inköpslista
+
           - type: custom:compact-custom-header
             main_config: true
             voice: clock
