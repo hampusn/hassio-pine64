@@ -35,7 +35,7 @@ views:
               - light.pendant_lamp
           
           - type: "custom:list-card"
-            sensor: sensor.todoist
+            entity: sensor.todoist
             title: Inköpslista
 
           - type: custom:compact-custom-header
